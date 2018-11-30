@@ -18,6 +18,9 @@ pipeline {
                 ok "Yes, we should."
                 submitter "Han"
             }
+            steps {
+                echo "let us go"
+            }
         }
         stage('Deploy') {
             steps {
