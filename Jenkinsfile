@@ -12,10 +12,12 @@ pipeline {
                 echo 'Testing..'
             }
         }
-        input {
-            message "Should we continue?"
-            ok "Yes, we should."
-            submitter "Han"
+        stage('Approval') {
+            input {
+                message "Should we continue?"
+                ok "Yes, we should."
+                submitter "Han"
+            }
         }
         stage('Deploy') {
             steps {
