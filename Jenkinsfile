@@ -12,8 +12,10 @@ pipeline {
                 echo 'Testing..'
             }
         }
-        timeout(time:5, unit:'SECONDS') {
-            input message:'Approve deployment?', submitter: 'han'
+        input {
+            message "Should we continue?"
+            ok "Yes, we should."
+            submitter "Han"
         }
         stage('Deploy') {
             steps {
